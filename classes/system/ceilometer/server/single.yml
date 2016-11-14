@@ -1,0 +1,10 @@
+classes:
+- service.ceilometer.server.single
+parameters:
+  ceilometer:
+    server:
+      notification: true
+      stack_domain_admin:
+        name: heat_domain_admin
+        password: ${_param:heat_domain_admin_password}
+        domain: heat
