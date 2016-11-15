@@ -21,7 +21,7 @@ classes:
 - system.galera.server.database.heat
 - system.galera.server.database.keystone
 - system.galera.server.database.nova
-- cluster.mk22_lab_basic
+- cluster.mk22_lab_basic_ceilometer
 parameters:
   _param:
     keepalived_vip_interface: eth1

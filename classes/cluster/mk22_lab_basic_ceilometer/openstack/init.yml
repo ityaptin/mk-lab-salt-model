@@ -29,7 +29,7 @@ parameters:
     heat_service_host: ${_param:cluster_vip_address}
     heat_domain_admin_password: workshop
     ceilometer_version: ${_param:openstack_version}
-    ceilometer_service_host: 172.16.10.108
+    ceilometer_service_host: ${_param:cluster_vip_address}
     cinder_version: ${_param:openstack_version}
     cinder_service_host: ${_param:cluster_vip_address}
     ceilometer_graphite_publisher_host: 172.16.10.107
@@ -68,6 +68,12 @@ parameters:
     mongodb_ceilometer_password: cloudlab
     mongodb_admin_password: cloudlab
     mongodb_shared_key: eoTh1AwahlahqueingeejooLughah4tei9feing0eeVaephooDi2li1TaeV1ooth
+    ceilometer_influxdb_port: 8086
+    ceilometer_influxdb_user: "ceilometer"
+    ceilometer_influxdb_password: "r00tme"
+    ceilometer_influxdb_database: "ceilometer"
+    ceilometer_elasticsearch_enable: False
+    ceilometer_influxdb_host: ${_param:cluster_vip_address}
   linux:
     network:
       host:
