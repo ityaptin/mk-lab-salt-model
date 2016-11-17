@@ -8,6 +8,7 @@ classes:
 - system.graphite.server.single
 - system.elasticsearch.server.single
 - system.heka.router.single
+- system.heka.os_telemetry_collector.single
 - system.kibana.server.single
 - system.rabbitmq.server.vhost.monitoring
 - system.influxdb.server.single
