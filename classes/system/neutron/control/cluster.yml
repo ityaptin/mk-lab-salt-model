@@ -1,4 +1,5 @@
 classes:
+- service.keepalived.cluster.single
 - service.haproxy.proxy.single
 - service.neutron.control.cluster
 parameters:
@@ -21,6 +22,7 @@ parameters:
       listen:
         neutron_api:
           type: openstack-service
+          service_name: neutron
           binds:
           - address: ${_param:cluster_vip_address}
             port: 9696

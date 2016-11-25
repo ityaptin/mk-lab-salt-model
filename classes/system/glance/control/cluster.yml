@@ -1,35 +1,23 @@
 classes:
 - service.glance.control.cluster
+- service.keepalived.cluster.single
 - service.haproxy.proxy.single
 - system.glance.control.storage.glusterfs
 parameters:
   glance:
     server:
       identity:
-        region: RegionOne
+        region: ${_param:openstack_region}
       notification: true
       logging:
         heka:
           enabled: true
-  mysql:
-    server:
-      database:
-        glance:
-          encoding: utf8
-          users:
-          - name: glance
-            password: ${_param:mysql_glance_password}
-            host: '%'
-            rights: all
-          - name: glance
-            password: ${_param:mysql_glance_password}
-            host: ${_param:cluster_local_address}
-            rights: all
   haproxy:
     proxy:
       listen:
         glance_api:
           type: openstack-service
+          service_name: glance
           binds:
           - address: ${_param:cluster_vip_address}
             port: 9292
@@ -46,8 +34,9 @@ parameters:
             host: ${_param:cluster_node03_address}
             port: 9292
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
-        glance_registry:
+        glance_registry_api:
           type: general-service
+          service_name: glance
           check: false
           binds:
           - address: ${_param:cluster_vip_address}
