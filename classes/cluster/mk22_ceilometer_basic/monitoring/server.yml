@@ -11,7 +11,6 @@ classes:
 - system.rabbitmq.server.vhost.monitoring
 - system.elasticsearch.server.single
 - system.influxdb.server.single
-- system.rabbitmq.server.single
 - cluster.mk22_ceilometer_basic
 parameters:
   _param:

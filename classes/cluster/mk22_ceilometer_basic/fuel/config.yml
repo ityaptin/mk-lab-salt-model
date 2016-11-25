@@ -20,8 +20,8 @@ parameters:
     salt_master_environment_repository: "https://github.com/tcpcloud"
     salt_master_environment_revision: master
     salt_master_base_environment: dev
-    reclass_data_repository: "git@github.com:Mirantis/mk-lab-salt-model.git"
-    reclass_data_revision: master
+    reclass_data_repository: "git@github.com:ityaptin/mk-lab-salt-model.git"
+    reclass_data_revision: local_deployment
     reclass_config_master: 192.168.10.100
     single_address: 172.16.10.100
     salt_master_host: 127.0.0.1
@@ -60,15 +60,23 @@ parameters:
               revision: stacklight
             collectd:
               revision: stacklight
+            elasticsearch:
+              revision: stacklight
             galera:
               revision: stacklight
             glance:
+              revision: stacklight
+            glusterfs:
               revision: stacklight
             haproxy:
               revision: stacklight
             heat:
               revision: stacklight
             heka:
+              revision: stacklight
+            horizon:
+              revision: stacklight
+            influxdb:
               revision: stacklight
             keystone:
               revision: stacklight
@@ -81,6 +89,8 @@ parameters:
             nova:
               revision: stacklight
             ntp:
+              revision: stacklight
+            opencontrail:
               revision: stacklight
             rabbitmq:
               revision: stacklight

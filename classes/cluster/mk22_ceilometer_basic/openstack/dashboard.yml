@@ -1,7 +1,7 @@
 classes:
 - system.linux.system.repo.tcp_base
 - system.horizon.server.single
-- cluster.mk22_lab_basic_ceilometer
+- cluster.mk22_ceilometer_basic
 parameters:
   linux:
     system:
